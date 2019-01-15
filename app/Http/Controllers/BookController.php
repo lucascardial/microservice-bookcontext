@@ -69,4 +69,10 @@ class BookController extends Controller
 
         return $this->successResponse($book);
     }
+
+    public function byAuthor($author)
+    {
+        $books = Book::where('author_id', $author)->get();
+        return $this->successResponse($books);
+    }
 }
